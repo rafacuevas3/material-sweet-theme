@@ -1,0 +1,36 @@
+style "scale"
+{
+    
+
+    GtkVScale::slider-length         = 14
+    GtkVScale::slider-width          = 14
+    GtkVScale::stepper-spacing       = 0
+    GtkVScale::trough-border         = 1
+    GtkVScale::activate_slider       = 0
+    GtkVScale::trough-side-details   = 1
+    GtkVScale::trough-under-steppers = 0
+    
+    # GtkVScale::focus-padding         = 4
+    # GtkVScale::value-spacing         = 0
+    # GtkVScale::arrow-displacement-x  = 0
+    # GtkVScale::arrow-displacement-y  = 0
+    
+    GtkHScale::slider-length         = 14
+    GtkHScale::slider-width          = 14
+    GtkHScale::stepper-spacing       = 0
+    GtkHScale::trough-border         = 1
+    GtkHScale::activate_slider       = 0
+    GtkHScale::trough-side-details   = 1
+    GtkHScale::trough-under-steppers = 0
+    
+    # GtkHScale::focus-padding         = 4
+    # GtkHScale::value-spacing         = 0
+    # GtkHScale::arrow-displacement-x  = 0
+    # GtkHScale::arrow-displacement-y  = 0
+}
+
+widget_class "*.<GtkScale>.*" style "scale"
+widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
+class "GtkScale" style "scale"
+class "GtkVScale" style "scale"
+class "GtkHScale" style "scale"

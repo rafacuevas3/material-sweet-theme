@@ -1,0 +1,69 @@
+style "range"           = "default"
+{
+    xthickness      = 0
+    ythickness      = 0
+    bg[NORMAL]      = @bg_color
+    bg[ACTIVE]      = shade (0.96, @bg_color)
+    bg[SELECTED]    = @selected_bg_color
+    bg[INSENSITIVE] = shade (0.95, @bg_color)
+    engine "murrine"
+    {
+        animation = FALSE
+
+        # gradient to draw on border
+        border_shades = { 0.747, 0.747 }
+
+        # overal contrast with borders
+        contrast = 0.0
+
+        # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
+        focusstyle = 1
+
+        # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
+        glazestyle = 0
+
+        # 0 = glow on top, 1 = glow on bottom, 2 = glow on top and bottom, 3 = glow on middle vertically, 4 = glow on middle horizontally, 5 = glow on all sides
+        glowstyle = 0
+
+        # amount of glow
+        glow_shade = 1.0
+
+        # gradient to draw on widgets
+        gradient_shades = { 0.747, 0.747, 0.747, 0.747 }
+
+        # amount of highlight
+        highlight_shade = 1.0
+
+        # amount of inset light border
+        lightborder_shade = 1.0
+
+        # 0 = lightborder on top side, 1 = lightborder on all sides
+        lightborderstyle = 0
+
+        # 0 = none, 1 = diagonal striped, 2 = vertical striped
+        progressbarstyle = 0
+
+        # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
+        reliefstyle = 0
+
+        # roundness of widgets
+        roundness = 8
+
+        # 0 = none, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
+        scrollbarstyle = 0
+
+        # 0 = none, 1 = handles
+        sliderstyle = 0
+
+        # 0 = standard, 1 = integrated stepper handles
+        stepperstyle = 1
+
+        # 0 = flat, 1 = glassy, 2 = gradient
+        toolbarstyle = 0
+        trough_border_shades = { 1.0, 1.0 }
+    }
+}
+
+class "GtkScale" style "range"
+class "GtkVScale" style "range"
+class "GtkHScale" style "range"

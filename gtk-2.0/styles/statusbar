@@ -1,0 +1,123 @@
+style "statusbar" = "default" 
+{
+    # xthickness = 1
+    # ythickness = 1
+
+    engine "pixmap" 
+    {
+        image
+        {
+            function        = RESIZE_GRIP
+            recolorable     = TRUE
+            # state           = NORMAL
+            detail          = "statusbar"
+            overlay_file    = "Handles/resize-grip.png"
+            
+            overlay_border  = {0,0,0,0 }
+            overlay_stretch = FALSE
+        }
+    }
+}
+
+
+class "GtkStatusbar" style "statusbar"
+
+# Firefox handles this a little differently... it needs to be applied to GtkWindow and have no other details...
+
+style "FirefoxGrip"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function     = RESIZE_GRIP
+            overlay_file = "Handles/resize-grip.png"
+        }
+    }
+} 
+
+class "GtkWindow" style "FirefoxGrip"
+style "scrolled_window"
+{
+    xthickness = 4
+    ythickness = 4
+
+    engine "pixmap"
+    {
+        image
+        {
+            function = SHADOW
+            file     = "Shadows/frame.png"
+            border   = { 5, 5, 5, 5 }
+            stretch  = TRUE
+        }
+    }
+}
+
+class "GtkScrolledWindow" style "scrolled_window"
+
+style "noshadow"
+{
+    engine "pixmap"
+    {
+        image
+        {
+            function    = SHADOW
+            shadow      = IN
+            recolorable = FALSE
+            file        = "Shadows/shadow-none.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = SHADOW
+            shadow      = OUT
+            recolorable = TRUE
+            file        = "Shadows/shadow-none.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = SHADOW
+            shadow      = ETCHED_IN
+            recolorable = TRUE
+            file        = "Shadows/shadow-none.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = SHADOW
+            shadow      = ETCHED_OUT
+            recolorable = TRUE
+            file        = "Shadows/shadow-none.png"
+            border      = { 4, 4, 4, 4 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = VLINE
+            recolorable = TRUE
+            file        = "Lines/linep-v.png"
+            border      = { 0, 1, 0, 0 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = HLINE
+            recolorable = TRUE
+            file        = "Lines/linep-h.png"
+            border      = { 0, 0, 0, 1 }
+            stretch     = TRUE
+        }
+    }
+}
+
+widget_class "*ThunarIconView*" style "noshadow"
+widget_class "*ThunarShortcutsPane*" style "noshadow"
+widget_class "*MousepadDocument*" style "noshadow"
+widget_class "FmMainWin.GtkVBox.GtkStatusbar.GtkFrame" style "noshadow"
+widget_class "PlumaWindow.*GtkScrolledWindow" style "noshadow"
+widget_class "EvWindow.*GtkScrolledWindow" style "noshadow"
